@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-lg-8">
                       <select name="id_kampung" id="id_kampung" class="form-control">
-
+                        <option value="">--- Pilih ---</option>
                       </select>
                     </div>
                   </div>

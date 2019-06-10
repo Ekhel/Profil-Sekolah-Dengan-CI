@@ -2,8 +2,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-              <?php echo $this->session->flashdata('msg');?>
-              <?php echo $this->session->flashdata('msg1');?>
+              <?php echo $this->session->flashdata('tambah');?>
+              <?php echo $this->session->flashdata('update');?>
+              <?php echo $this->session->flashdata('hapus');?>
               <div class="sparkline13-list shadow-reset">
                 <div class="sparkline13-list shadow-reset">
                   <div class="sparkline13-hd">
@@ -46,7 +47,16 @@
                                     <td><?php echo $item->status ?></td>
                                     <td><?php echo $item->sertifikasi ?></td>
                                     <td><?php echo $item->pend_terahir ?></td>
-                                    <td><a href="#"><i class="fa fa-edit"></i></a></td>
+                                    <td>
+                                      <a href="javascript:; #modal_edit" data-toggle="modal"><i class="fa fa-edit" onclick="edit(
+                                        '<?php echo $item->id_guru ?>',
+                                        '<?php echo $item->id_sekolah ?>',
+                                        '<?php echo $item->nama_guru ?>',
+                                        '<?php echo $item->status ?>',
+                                        '<?php echo $item->sertifikasi ?>',
+                                        '<?php echo $item->pend_terahir ?>',
+                                        )"></i></a>
+                                    </td>
                                     <td><a href="<?php echo base_url()?>Guru/hapus_guru/<?php echo $item->id_guru ?>" onclick="return confirm('Hapus item ini Dari Database ?')"><i class="fa fa-trash"></i></a></td>
                                   </tr>
                                   <?php } ?>
@@ -78,3 +88,32 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal fade" id="modal_edit" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id=""><i class="fa fa-plus-circle"></i> Form Edit Guru</h4>
+			</div>
+			<div class="modal-body">
+        <?php $this->load->view('edit-guru'); ?>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+  function edit(id_guru,id_sekolah,nama_guru,status,sertifikasi,pend_terahir)
+  {
+    $("#id_guru").val(id_guru);
+    $("#id_sekolah").val(id_sekolah);
+    $("#nama_guru").val(nama_guru);
+    $("#status").val(status);
+    $("#sertifikasi").val(sertifikasi);
+    $("#pend_terahir").val(pend_terahir);
+  }
+</script>

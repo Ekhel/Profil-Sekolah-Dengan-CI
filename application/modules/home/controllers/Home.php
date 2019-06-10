@@ -107,4 +107,11 @@ class Home extends MX_Controller{
     $query = $this->db->query("SELECT * FROM tb_sekolah");
     return $query->result();
   }
+  public function test_table()
+  {
+    $data['title'] = 'Test Data Maps ON Table';
+    $this->template->load('MasterLayout','datatable',$data);
+
+  }
+  
 }

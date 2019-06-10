@@ -209,7 +209,7 @@
                                 <text> Web</text>
                               </div>
                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                :<a href="<?php echo $item->web ?>"> [ Lihat Web ]</a>
+                                : <a href="<?php echo $item->web ?>" target="_blank"> [ Lihat Web ]</a>
                               </div>
                             </div>
                           </div>

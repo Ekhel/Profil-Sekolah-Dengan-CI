@@ -6,8 +6,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-              <?php echo $this->session->flashdata('msg');?>
-              <?php echo $this->session->flashdata('msg1');?>
+              <?php echo $this->session->flashdata('hapus');?>
+              <?php echo $this->session->flashdata('update');?>
+              <?php echo $this->session->flashdata('tambah');?>
               <div class="sparkline13-list shadow-reset">
                 <div class="sparkline13-hd">
                   <div class="main-sparkline13-hd">
@@ -49,7 +50,16 @@
                                   <td><?php echo $item->nama_ref ?></td>
                                   <td><?php echo $item->jumlah ?></td>
                                   <td><?php echo $item->satuan ?></td>
-                                  <td><a href="#"><i class="fa fa-edit"></i></a></td>
+                                  <td>
+                                    <a href="javascript:; #modal_edit" data-toggle="modal"><i class="fa fa-edit" onclick="edit(
+                                      '<?php echo $item->id_fasilitas ?>',
+                                      '<?php echo $item->id_sekolah ?>',
+                                      '<?php echo $item->jenis ?>',
+                                      '<?php echo $item->id_ref ?>',
+                                      '<?php echo $item->jumlah ?>',
+                                      '<?php echo $item->satuan ?>',
+                                      )"></i></a>
+                                  </td>
                                   <td><a href="<?php echo base_url()?>Fasilitas/hapus_fasilitas/<?php echo $item->id_fasilitas ?>" onclick="return confirm('Hapus item ini Dari Database ?')"><i class="fa fa-trash"></i></a></td>
                                 </tr>
                                 <?php } ?>
@@ -63,7 +73,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="modal fade" id="modal_tambah" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
 	<div class="modal-dialog">
@@ -82,6 +91,35 @@
 	</div>
 </div>
 
+<div class="modal fade" id="modal_edit" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id=""><i class="fa fa-plus-circle"></i> Form edit Fasilitas</h4>
+			</div>
+			<div class="modal-body">
+        <?php $this->load->view('edit-fasilitas'); ?>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+  function edit(id_fasilitas,id_sekolah,jenis,id_ref,jumlah,satuan)
+  {
+    $("#id_fasilitas").val(id_fasilitas);
+    $("#id_sekolah").val(id_sekolah);
+    $("#jenis").val(jenis);
+    $("#id_ref").val(id_ref);
+    $("#jumlah").val(jumlah);
+    $("#satuan").val(satuan);
+  }
+
+</script>
 
 <script src="<?php echo base_url()?>assets/js/chosen/chosen.jquery.js"></script>
  <script src="<?php echo base_url()?>assets/js/chosen/chosen-active.js"></script>

@@ -62,7 +62,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="logo">
-                                        <a href="#"><img src="<?php echo base_url()?>assets/img/logo/logo.png" alt="" />
+                                        <a href="#"><img src="<?php echo base_url()?>assets/img/logo/login-logo.png" alt="" />
                                         </a>
                                     </div>
                                 </div>

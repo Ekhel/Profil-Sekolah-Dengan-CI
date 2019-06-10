@@ -27,4 +27,9 @@ class M_fasilitas extends CI_Model{
     $fasilitas = $this->get_fasilitas($id_fasilitas);
     $this->db->delete('tb_fasilitas', array('id_fasilitas' => $id_fasilitas));
   }
+  function update_fasilitas($where,$data,$table)
+  {
+    $this->db->where($where);
+    $this->db->update($table,$data);
+  }
 }

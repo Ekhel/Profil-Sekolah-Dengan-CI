@@ -95,7 +95,7 @@ class Profil extends MX_Controller{
 		$config['center'] = '-2.5588092, 140.4749569';
 		$config['zoom'] = '12';
 		$config['map_height'] = '300px;';
-    $config['kmlLayerURL'] = 'http://filemanager.bappeda.jayapurakab.go.id/repository/PENLAP/KML/ADMIN_KAMPUNG_MONITORING.kml';
+    $config['kmlLayerURL'] = 'http://filemanager.bappeda.jayapurakab.go.id/repository/PENLAP/SEKOLAH/ADMIN_KAMPUNG.kml';
 		$this->googlemaps->initialize($config);
 
 		$marker = array();
