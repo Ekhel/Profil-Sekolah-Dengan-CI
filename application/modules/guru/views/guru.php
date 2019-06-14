@@ -9,7 +9,7 @@
                 <div class="sparkline13-list shadow-reset">
                   <div class="sparkline13-hd">
                     <div class="main-sparkline13-hd">
-                        <h1>Data <span class="table-project-n">Guru & Tenaga Pendidik Sekolah</span></h1>
+                        <h1>Data <span class="table-project-n">Guru & Tendik</span></h1>
                         <div class="sparkline13-outline-icon">
                             <span><a data-toggle="modal" href="#modal_tambah" title="Tambah Data" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></a></i></span>
                         </div>
